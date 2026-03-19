@@ -7,9 +7,8 @@ export default function FieldPrice({
   onChange,
 }) {
   return (
-    <>
+    <div className="campoForm">
       <label htmlFor={id}>{labelText}</label>
-      <br />
       <input
         type="number"
         name={id}
@@ -21,6 +20,6 @@ export default function FieldPrice({
         onChange={onChange}
         required
       />
-    </>
+    </div>
   );
 }

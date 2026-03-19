@@ -6,9 +6,8 @@ export default function FieldText({
   onChange,
 }) {
   return (
-    <>
-      <label htmlFor={id}> {labelText}</label>
-      <br />
+    <div className="campoForm">
+      <label htmlFor={id}>{labelText}</label>
       <input
         type="text"
         id={id}
@@ -18,6 +17,6 @@ export default function FieldText({
         onChange={onChange}
         required
       />
-    </>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Section({ eletronicos, tipo }) {
           key={tipoSecao}
           nomeArea={tipoSecao}
           eletronicos={eletronicos.filter(
-            (element) => element.tipo == tipoSecao,
+            (element) => element.tipo === tipoSecao,
           )}
         />
       ))}

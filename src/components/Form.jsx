@@ -1,27 +1,33 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 import DropDown from "./DropDown";
 import FieldPrice from "./FieldPrice";
 import FieldText from "./FieldText";
 import FieldCondition from "./FieldCondition";
 
-export default function Form({ className, marcas, secoes }) {
+export default function Form({ className, marcas, secoes, aoSalvar }) {
   const objetoInicial = {
     marca: marcas[0],
     tipo: secoes[0],
     nome: "",
-    preco: 0.0,
-    condicao: "usado",
+    preco: "",
+    condicao: "novo",
   };
+
   const [objeto, setObjeto] = useState(objetoInicial);
+
+  const aoEnviar = (e) => {
+    e.preventDefault();
+    aoSalvar({
+      ...objeto,
+      preco: Number(objeto.preco),
+    });
+    setObjeto(objetoInicial);
+  };
+
   return (
-    <section
-      className={className}
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log(objeto);
-      }}
-    >
-      <form>
+    <section className={className}>
+      <h2 className="formTitulo">Cadastre um produto</h2>
+      <form className="formConteudo" onSubmit={aoEnviar}>
         <DropDown
           labelText="marca do produto:"
           id="marcas"
@@ -29,7 +35,6 @@ export default function Form({ className, marcas, secoes }) {
           value={objeto.marca}
           onChange={(e) => setObjeto({ ...objeto, marca: e.target.value })}
         />
-        <br />
         <DropDown
           labelText="tipo do produto:"
           id="tipoProduto"
@@ -37,15 +42,13 @@ export default function Form({ className, marcas, secoes }) {
           value={objeto.tipo}
           onChange={(e) => setObjeto({ ...objeto, tipo: e.target.value })}
         />
-        <br />
         <FieldText
           id="textoNome"
-          labelText="nome"
-          placeholder="digite seu nome aqui"
+          labelText="nome do produto"
+          placeholder="digite o nome do produto"
           value={objeto.nome}
           onChange={(e) => setObjeto({ ...objeto, nome: e.target.value })}
         />
-        <br />
         <FieldPrice
           labelText="preço"
           id="preçoProduto"
@@ -54,12 +57,13 @@ export default function Form({ className, marcas, secoes }) {
           value={objeto.preco}
           onChange={(e) => setObjeto({ ...objeto, preco: e.target.value })}
         />
-        <br />
         <FieldCondition
           value={objeto.condicao}
           onChange={(e) => setObjeto({ ...objeto, condicao: e.target.value })}
         />
-        <button>envie</button>
+        <button className="botaoEnviar" type="submit">
+          Cadastrar
+        </button>
       </form>
     </section>
   );
