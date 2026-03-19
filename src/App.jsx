@@ -11,12 +11,7 @@ function App() {
   return (
     <>
     <Banner src="https://www.designerd.com.br/bancos-de-imagens-gratuitos/" nome="loja 1"/>
-    <Form className="formEstilo">
-      <DropDown labelText="marca do produto:" id="marcas" options={marcas}/>
-      <DropDown labelText="tipo do produto:" id="tipoProduto" options={secoes}/>
-      <FieldText id="textoNome" labelText="nome" placeholder="digite seu nome aqui" />
-      <FieldPrice labelText="preço" id="preçoProduto" max="10000"/>
-      <button>envie</button>
+    <Form className="formEstilo" marcas={marcas} secoes={secoes}>
     </Form>
     
     </>
