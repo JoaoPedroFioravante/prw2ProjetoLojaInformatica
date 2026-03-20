@@ -1,17 +1,53 @@
-# React + Vite
+# Projeto Loja de Informática (React Básico)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido como atividade da disciplina **Programação para Web 2**.
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A aplicação simula uma loja de produtos eletrônicos, onde é possível cadastrar itens por meio de um formulário e visualizar os produtos organizados por seções.
 
-## React Compiler
+## Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# prw2ProjetoLojaInformatica
+- Exibição de banner da loja;
+- Formulário para cadastro de produtos eletrônicos;
+- Seleção de marca e seção do produto;
+- Listagem dos produtos cadastrados na tela;
+- Organização dos itens por categoria.
+
+## Estrutura principal
+
+- `src/App.jsx`: componente principal e controle de estado;
+- `src/components/Form.jsx`: formulário de cadastro;
+- `src/components/Section.jsx`: exibição por seções;
+- `src/components/Banner.jsx`: banner principal;
+- Demais componentes de apoio: campos de texto, preço, condição e dropdown.
+
+## Como executar o projeto
+
+1. Instale as dependências:
+
+   `npm install`
+
+2. Inicie o servidor de desenvolvimento:
+
+   `npm run dev`
+
+3. Abra no navegador o endereço exibido no terminal (geralmente `http://localhost:5173`).
+
+## Scripts disponíveis
+
+- `npm run dev` — inicia o projeto em modo de desenvolvimento;
+- `npm run build` — gera a versão de produção;
+- `npm run preview` — visualiza a build de produção;
+- `npm run lint` — verifica padrões de código com ESLint.
+
+## Autor
+
+Atividade acadêmica desenvolvida para a disciplina de **Programação para Web 2**.
