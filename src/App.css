@@ -162,6 +162,20 @@
   padding: 0.75rem;
 }
 
+.brandLogoWrap {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.45rem;
+}
+
+.brandLogo {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .price-name-condition h3,
 .price-name-condition h4 {
   margin: 0;

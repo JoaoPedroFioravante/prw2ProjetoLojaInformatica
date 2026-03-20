@@ -15,7 +15,7 @@ function App() {
     "Games",
     "Gadgets",
   ];
-  const marcas = ["HP", "Dell", "Positivo", "Asus", "Xing Ling genérico"];
+  const marcas = ["HP", "Acer", "Apple", "Samsung", "Xing Ling Genérico"];
 
   const aoCadastrarProduto = (novoProduto) => {
     setEletronicos((anterior) => [...anterior, novoProduto]);

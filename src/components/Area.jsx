@@ -1,3 +1,19 @@
+import acerLogo from "../assets/acer.svg";
+import appleLogo from "../assets/apple.svg";
+import hpLogo from "../assets/hp.svg";
+import samsungLogo from "../assets/samsung.svg";
+import xingLogo from "../assets/xing.svg";
+
+const logosPorMarca = {
+  hp: hpLogo,
+  acer: acerLogo,
+  apple: appleLogo,
+  samsung: samsungLogo,
+  "Xing Ling Genérico": xingLogo,
+};
+
+const normalizarMarca = (marca = "") => marca.toLowerCase().trim();
+
 export default function Area({ eletronicos, nomeArea }) {
   return eletronicos.length > 0 ? (
     <>
@@ -6,6 +22,15 @@ export default function Area({ eletronicos, nomeArea }) {
         <div className="products">
           {eletronicos.map((element, index) => (
             <div className="product" key={`${element.nome}-${index}`}>
+              <div className="brandLogoWrap">
+                <img
+                  className="brandLogo"
+                  src={
+                    logosPorMarca[normalizarMarca(element.marca)] ?? xingLogo
+                  }
+                  alt={`Logo da marca ${element.marca}`}
+                />
+              </div>
               <div className="price-name-condition">
                 <h3>{element.nome}</h3>
                 <h4>{element.marca}</h4>
