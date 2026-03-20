@@ -5,6 +5,7 @@ export default function FieldPrice({
   min,
   value,
   onChange,
+  placeholder,
 }) {
   return (
     <div className="campoForm">
@@ -13,6 +14,7 @@ export default function FieldPrice({
         type="number"
         name={id}
         id={id}
+        placeholder={placeholder}
         step="0.01"
         min={min}
         max={max}

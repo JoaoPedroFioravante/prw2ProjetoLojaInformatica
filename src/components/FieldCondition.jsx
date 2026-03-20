@@ -1,7 +1,7 @@
 export default function FieldCondition({ value, onChange }) {
   return (
     <fieldset className="campoForm condicaoFieldset">
-      <legend>condição do produto</legend>
+      <legend>Condição do produto</legend>
 
       <label className="radioItem" htmlFor="usado">
         <input

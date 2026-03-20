@@ -29,14 +29,14 @@ export default function Form({ className, marcas, secoes, aoSalvar }) {
       <h2 className="formTitulo">Cadastre um produto</h2>
       <form className="formConteudo" onSubmit={aoEnviar}>
         <DropDown
-          labelText="marca do produto:"
+          labelText="Marca do produto:"
           id="marcas"
           options={marcas}
           value={objeto.marca}
           onChange={(e) => setObjeto({ ...objeto, marca: e.target.value })}
         />
         <DropDown
-          labelText="tipo do produto:"
+          labelText="Tipo do produto:"
           id="tipoProduto"
           options={secoes}
           value={objeto.tipo}
@@ -44,16 +44,16 @@ export default function Form({ className, marcas, secoes, aoSalvar }) {
         />
         <FieldText
           id="textoNome"
-          labelText="nome do produto"
-          placeholder="digite o nome do produto"
+          labelText="Nome do produto"
+          placeholder="Digite o nome do produto"
           value={objeto.nome}
           onChange={(e) => setObjeto({ ...objeto, nome: e.target.value })}
         />
         <FieldPrice
-          labelText="preço"
+          labelText="Preço"
           id="preçoProduto"
+          placeholder="Digite o preço do produto"
           min="0.00"
-          max="10000"
           value={objeto.preco}
           onChange={(e) => setObjeto({ ...objeto, preco: e.target.value })}
         />
